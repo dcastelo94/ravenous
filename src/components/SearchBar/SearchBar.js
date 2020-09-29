@@ -5,14 +5,16 @@ class SearchBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            term: "",
-            location: "",
+            term: '',
+            location: '',
             sortBy: "best_match"
         };
 
         this.handleTermChange = this.handleTermChange.bind(this);
         this.handleLocationChange = this.handleLocationChange.bind(this);
         this.handleSearch = this.handleSearch.bind(this);
+        this.handleSortByChange = this.handleSortByChange.bind(this);
+
 
         this.sortByOptions = {
             "Best Match": "best_match",
@@ -55,9 +57,9 @@ class SearchBar extends React.Component {
                 onClick={this.handleSortByChange.bind(this, sortByOptionValue)}>
                     {sortByOption}
                 </li>
-                    );
+                );
         });
-    };
+    }
 
     render() {
         return (
